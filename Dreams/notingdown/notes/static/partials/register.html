@@ -1,0 +1,58 @@
+<div style="background-color: #eeeeee">
+<div class="container">
+    <md-card style="margin-top:0px;">
+        <div style="background:url('notes/static/img/life.jpg');height:300px;"></div>
+        <div class="row">
+            <div class="col-sm-12" >
+                <div class="md-whiteframe-z2">
+                     <md-tabs style="background-color: #333333;">
+                        <md-tab><a ui-sref="define" style="color:#ffffff;text-decoration: none">Start Tracking</a></md-tab>
+                        <md-tab><a ui-sref="home" style="color:#ffffff;text-decoration: none">Login</a></md-tab>
+                        <md-tab><a ui-sref="register" style="color:#ffffff;text-decoration: none">Register</a></md-tab>
+                    </md-tabs>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="height:20px"></div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <form name="registerForm">
+                  <md-input-container>
+                    <label>User Name</label>
+                    <input name="userName" ng-model="user.userName" required md-maxlength="100" minlength="3">
+                    <div ng-messages="registerForm.userName.$error" ng-show="registerForm.userName.$dirty">
+                      <div ng-message="required">This is required!</div>
+                      <div ng-message="md-maxlength">That's too long!</div>
+                      <div ng-message="minlength">That's too short!</div>
+                    </div>
+                  </md-input-container>
+                   <md-input-container>
+                    <label>Email</label>
+                    <input name="email" type="email" ng-model="user.email" required>
+                    <div ng-messages="registerForm.email.$error" ng-show="registerForm.email.$dirty">
+                    </div>
+                  </md-input-container>
+                   <md-input-container>
+                    <label>Password</label>
+                    <input name="password" type="password" ng-model="user.password" required md-maxlength="10" minlength="4">
+                    <div ng-messages="resgisterForm.password.$error" ng-show="resgisterForm.password.$dirty">
+                      <div ng-message="required">This is required!</div>
+                      <div ng-message="md-maxlength">That's too long!</div>
+                      <div ng-message="minlength">That's too short!</div>
+                    </div>
+                  </md-input-container>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+           <div class="col-sm-6"></div>
+            <div class="col-sm-2">
+           <md-button  id="name" class="md-accent md-fab"  aria-label="close" ng-disabled ="registerForm.$invalid" ng-click="submit()" >
+                  <md-icon md-svg-src="notes/static/img/login2.svg"></md-icon>
+           </md-button>
+           </div>
+        </div>
+    </md-card>
+</div>
+</div>

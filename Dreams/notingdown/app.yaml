@@ -1,0 +1,24 @@
+application: notingdown
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+- url: /notes/static
+  static_dir: notes/static
+
+- url: /.*
+  script: main.application
+
+libraries:
+
+- name: django
+  version: "1.5"
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: 'djangoappengine.settings'

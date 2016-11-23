@@ -1,0 +1,53 @@
+<div style="background-color: #eeeeee">
+<div class="container">
+    <md-card style="margin-top:0px;">
+        <div style="background:url('notes/static/img/life.jpg');height:387px;"></div>
+        <div class="row">
+            <div class="col-sm-12" >
+                <div class="md-whiteframe-z2">
+                     <md-tabs style="background-color: #333333;">
+                        <md-tab><a ui-sref="define" style="color:#ffffff;text-decoration: none">Start Tracking</a></md-tab>
+                        <md-tab><a ui-sref="home" style="color:#ffffff;text-decoration: none">Login</a></md-tab>
+                        <md-tab><a ui-sref="register" style="color:#ffffff;text-decoration: none">Register</a></md-tab>
+                    </md-tabs>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="height:20px"></div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <h3>Noting down</h3><br>
+                What would you like to Track? 1000 of our users track their projects, fitness, studies, reading habits through NOTING DOWN</div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-2">
+                  <form name="userForm">
+                  <md-input-container>
+                    <label>Email</label>
+                    <input name="email" ng-model="user.email" required >
+                    <div ng-messages="userForm.email.$error" ng-show="userForm.email.$dirty">
+                      <div ng-message="required">This is required!</div>
+                    </div>
+                    </md-input-container>
+                    <md-input-container>
+                    <label>Password</label>
+                    <input name="password" type="password" ng-model="user.password">
+                    <div ng-messages="userForm.password.$error" ng-show="userForm.password.$dirty">
+                      <div ng-message="required">This is required!</div>
+                    </div>
+                    <div ng-hide="true" ng-model="user.session"></div>
+                  </md-input-container>
+                 </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10"></div>
+            <div class="col-sm-1" style="position:relative">
+                <md-button style="positon:absolute;margin-top:-20px" id="name" class="md-accent md-fab" ng-disabled ="userForm.$invalid"  ng-click="login()" aria-label="close" >
+                      <md-icon md-svg-src="notes/static/img/login2.svg"></md-icon>
+               </md-button>
+           </div>
+        </div>
+    </md-card>
+</div>
+</div>

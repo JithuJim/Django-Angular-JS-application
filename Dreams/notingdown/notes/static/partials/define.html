@@ -1,0 +1,46 @@
+<div class="container" >
+    <md-card>
+        <div style="background:url('notes/static/img/life.jpg') ;height:75px; "></div>
+        <div class="row">
+            <div class="col-sm-12" >
+                <div class="md-whiteframe-z2">
+                     <md-tabs style="background-color: #333333;">
+                        <md-tab><a ui-sref="define" style="color:#ffffff;text-decoration: none">Tasks</a></md-tab>
+                        <md-tab><a ui-sref="collect" style="color:#ffffff;text-decoration: none">Track</a></md-tab>
+                        <md-tab><a ui-sref="report" style="color:#ffffff;text-decoration: none">Review</a></md-tab>
+                        <md-tab><a ui-sref="logout" style="color:#ffffff;text-decoration: none">Logout</a></md-tab>
+                    </md-tabs>
+                </div>
+            </div>
+        </div>
+        <div ng-init="initTask()" layout-padding>
+            <div class="row"   style="margin-top: 2%" id="main_row">
+                <div class="col-md-3" ng-repeat="list in message track by $index" ng-show="list.task">
+                    <md-card layout="row" style="height: 60px" layout-align="center center">
+                        <div style="text-align:center;margin-top: 35px">{{list.task}}</div>
+                        <md-button style="position:absolute;"
+                                   aria-label="close" ng-click="deleteTask(list.task);list.task =! list.task;">
+                                   <md-icon  style="fill:black;height: 15px" md-svg-icon="notes/static/img/cancel30.svg"></md-icon>
+                        </md-button>
+                    </md-card>
+                    <!--<md-button  style="background-color:#357ebd;width:98%" ng-click="addSubtasks()">Add/Review Subtasks</md-button>-->
+                </div>
+            </div>
+            <div class="row" style="margin-top: 2%" layout-padding>
+                <div class="col-md-4"></div>
+                <div class="col-md-3">
+                 <form name="userForm">
+                    <md-input-container>
+                        <label>Add More Tasks To Track</label>
+                        <input name="tasks" ng-model="tasks">
+                    </md-input-container>
+                 </form>
+                 </div>
+                  <md-button   id="name" class="md-primary md-fab col-md-1"  aria-label="close"   ng-click="submit(tasks);" >
+                          <md-icon md-svg-src="notes/static/img/add30.svg"></md-icon>
+                  </md-button>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </md-card>
+</div>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="8b484240-b290-43bc-9f10-54e0cef3d201">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:C:\Jithu\My applications\Project1\db.sqlite3</jdbc-url>
+    <libraries/>
+  </data-source>
+</component>
